@@ -78,8 +78,8 @@ To run this project locally:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/Elam-parithi/Resale_Flat_Price_Prediction.git
-   cd Singapore-Resale-Flat-Prices-Predicting
+   git clone https://github.com/Elam-parithi/Singapore_FlatPrice_predicting.git
+   cd Singapore_FlatPrice_predicting
    ```
 
 2. **Set Up a Virtual Environment** (Optional but recommended)
