@@ -1,9 +1,18 @@
+#!/usr/bin/env python3
+
+# module_function.py
+"""
+This file contains the mapping functions and the prediction function.
+It uses the pickled model and the json settings file.
+"""
 import json
 import pickle
 import numpy as np
+import warnings
 
 json_settings = r"settings.json"
 ML_file = r"model_data/RTR_model.pkl"
+warnings.filterwarnings("ignore")
 
 with open(ML_file, "rb") as f:
     regg_model = pickle.load(f)
@@ -59,7 +68,8 @@ def predict_price(town, flat_type, floor_area_sqm, flat_model, lease_commence_da
 
 
 if __name__ == "__main__":
-    # ,,,,,,,,,
-    predict_price(town=25, flat_type=5.0, floor_area_sqm=145.0, flat_model=3.0, lease_commence_date=1987,
+    result = predict_price(town='BEDOK', flat_type="2 ROOM", floor_area_sqm=145.0, flat_model="Maisonette", lease_commence_date=1987,
                   year=2025, storey_start=0.011858263308657468, storey_end=1.0986122886681098,
                   remaining_lease_year=61, remaining_lease_month=10)
+    print(f"The flat price was ${result}")
+
